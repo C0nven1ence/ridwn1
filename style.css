@@ -1,0 +1,655 @@
+* {
+	margin: 0px;
+	padding:0px;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	overflow-x:hidden;
+	background-color:rgb(218,241,254);
+}
+
+span {
+	color: red;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+ul {
+	list-style-type: none;
+
+}
+/* Ini Bagian Pembungkus SIDEBAR , NAVBAR , CONTENT*/
+.container {
+	background: linear-gradient(#3333ff, #6666ff); 
+	display: grid;
+	grid-template-columns: 1fr 3fr ;
+	grid-template-areas:
+		"sidebar nav"
+		"sidebar content";
+						 
+}
+/*INI AKHIR BAGIAN PEMBUNGKUS SIDEBAR , NAVBAR , CONTENT*/
+
+
+
+/*INI NAVBAR*/
+nav {
+	height: 20px;
+	display: flex;
+	justify-content: space-around;
+	padding: 28px;
+	color: white;
+	grid-area: nav;
+	background-color: ;
+	
+}
+
+nav .logo {
+	font-size: 28px;
+	font-family: 'Roboto Mono', monospace;
+	margin-right: 0px;
+	font-size:;
+	font-family:;
+}
+
+nav ul {
+	padding-top: 12px;
+	display: flex;
+	list-style: none;
+	width: 70%;
+	justify-content: space-between;
+	
+}
+
+nav ul li a {
+	padding: 9px;
+	font-size: 17px;
+	font-family: 'Roboto Mono', monospace;
+	color: white;
+	text-decoration: none;
+}
+
+nav ul li a:hover{
+	color: red;
+	
+}
+
+.menu-toggle {
+	display: none;
+	flex-direction: column;
+	height: 20px;
+	justify-content: space-between;
+	position: relative;
+}
+
+.menu-toggle input {
+	position: absolute;
+	width: 40px;
+	height: 28px;
+	opacity: 0;
+	left: -6px;
+	top: -5px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.menu-toggle span {
+	display: block;
+	width: 28px;
+	height: 3px;
+	background-color: white;
+	transition: all 0.5s;
+}
+/*Hamburger Menu Animation*/
+.menu-toggle span:nth-child(2) {
+	transform-origin: 0 0;
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+	transform: rotate(45deg) translate(-1px, -1px);
+	background-color: red;
+}
+
+.menu-toggle span:nth-child(4) {
+	transform-origin: 0 100%;
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+	transform: rotate(-45deg) translate(-1px, 0);
+	background-color: red;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+	opacity: 0;
+	transform: scale(0);
+}
+
+
+/*INI AKHIR NAVBAR*/
+
+
+
+/*INI SIDEBAR*/
+.sidebar {
+	width: 490px;
+	height: 100%;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+.image-profile {
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 240px;
+}
+
+.sidebar .profesi {
+	color: white;
+	margin-left: 30%;
+
+}
+
+.sidebar .name {
+	margin-left: 30%;
+	color: white;
+	font-size: 20px;
+	font-family: 'Roboto Mono', monospace;
+}
+/*INI AKHIR SIDEBAR*/
+
+
+/*INI CONTENT*/
+.content-2 {
+	position: relative;
+	height: 550px;
+	grid-area: content;
+}
+
+.judul {
+	position: absolute;
+	font-family: 'Roboto Mono', monospace;
+	color: white;
+	font-size: 48px;
+	margin: 20px 15px 0px 20px;
+	
+
+}
+
+section {
+	display: flex;
+	background-position: left-top;
+	background-image: url("assets/b1.png");
+	background-repeat: no-repeat;
+	height: 850px;
+}
+
+.judul-about {
+	padding-bottom: 18px;
+	border-bottom: 3px solid #333;
+	text-align: center;
+	margin: 50px 100px 0px 100px;
+	font-size: 24px;
+	font-family: 'Roboto Mono', monospace;
+}
+
+.about-me {
+	justify-content: center;
+	display: flex;
+	font-family: 'Roboto Mono', monospace;
+	font-size: 18px;
+}
+
+.about-me p:nth-child(1)  {
+	width: 30%;
+	margin-top: 80px;
+	margin-right: 10px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+	border-radius: 10px;
+	padding: 15px;
+
+}
+
+.about-me p:nth-child(2)  {
+	width: 30%;
+	margin-top: 80px;
+	margin-left: 10px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+	border-radius: 10px;
+	padding: 15px;
+}
+
+/*INI UNTUK UKURAN LARGE*/
+@media screen and (max-width: 1200px){
+
+	nav .logo {
+	left: 20px;
+	right: 0;
+	position: relative;
+	font-size: 20px;
+	font-family: 'Roboto Mono', monospace;
+	margin-right: 0px;
+}
+
+nav ul {
+	padding-top: 12px;
+	display: flex;
+	list-style: none;
+	width: 75%;
+	justify-content: space-around;
+}
+
+nav ul li {
+
+}
+
+	.sidebar {
+	width: 390px;
+	height: 100%;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+	.judul {
+		margin-top: 70px;
+		color: white;
+		margin-left: 12px;
+		font-size: 36px;
+
+}
+
+
+}
+/*AKHIR RESPONSIVE UNTUK UKURAN LARGE*/
+
+
+/*INI UNTUK UKURAN LAPTOP*/
+@media screen and (max-width: 992px) {
+
+nav {
+	margin-left: -30px;
+}
+
+nav .logo {
+	position: relative;
+	font-size: 20px;
+	font-family: 'Roboto Mono', monospace;
+	margin-right: 0px;
+	left:-380px;
+}
+
+nav ul {
+	display: flex;
+	list-style: none;
+	width: 150%;
+	justify-content: space-around;
+	margin-left: -80px;
+	margin-right: -32px;
+}
+
+nav ul li a {
+	padding: 12px 2px 12px 0px;
+	width: 100%;
+	font-size: 17px;
+	font-family: 'Roboto Mono', monospace;
+	color: white;
+	text-decoration: none;
+}
+
+	.sidebar {
+	width: 390px;
+	height: 630px;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+	.judul {
+		color: white;
+		margin-left: 12px;
+		font-size: 30px;
+
+	}
+
+
+}
+/*AKHIR RESPONSIVE UKURAN LAPTOP*/
+
+/*INI UNTUK UKURAN TABLET*/
+@media screen and (max-width: 768px){
+
+	nav {
+		background-color: #333;
+	}
+
+	nav .logo {
+	position: relative;
+	font-size: 20px;
+	font-family: 'Roboto Mono', monospace;
+	margin-right: 0px;
+	left:-370px;
+
+	}
+
+	nav ul{
+		position: absolute;
+		margin-top: 70px;
+		right: 0;
+		top: 0;
+		height: 90vh;
+		width: 48%;
+		justify-content: space-evenly;
+		flex-direction: column;
+		align-items: center;
+		background-color: #333;
+		z-index: 1;
+		transform: translateX(100%);
+		transition: all 1s;
+	}
+
+	nav ul li {
+		padding: 15px 0px 20px 0px;
+		text-align: center;
+		width: 360px;
+		height:40px;
+	}
+
+	nav ul li a {
+		padding: 50px 60px 30px 60px;
+	}
+
+	nav ul li a:hover {
+		background-color: ;
+	}
+
+	nav ul li:hover {
+	padding-top: 50px;
+	height: 50px;
+	color: white;
+	background-color: #334;
+}
+
+	nav ul.slide{
+		transform: translateX(0);
+	}
+
+	.menu-toggle {
+		margin-left: 20px;
+		display: flex;
+	}
+	
+	.sidebar {
+	width: 390px;
+	height: 630px;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+	.judul {
+		margin-left: 12px;
+		font-size: 28px;
+	}
+}
+/*AKHIR RESPONSIVE UKURAN TABLET*/
+
+
+
+/*INI UNTUK UKURAN HP*/
+@media screen and (max-width: 320px){
+	nav {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		grid-area: sidebar;
+		height: 30px;
+		background-color: #333;
+		opacity: 0.95;
+
+	}
+
+	nav .menu-toggle {
+		margin-right: 40px;
+	}
+
+
+	nav .logo {
+		color: white;
+		position: relative;
+		left: -80px;
+		margin-left: 0px;
+	}
+
+		nav ul li {
+		padding: 15px 0px 20px 0px;
+		text-align: center;
+		width: 240px;
+		height:40px;
+		opacity: 0.8;
+	}
+
+	nav ul li a {
+		padding: 50px 60px 30px 60px;
+
+	}
+
+	nav ul li:hover {
+	padding-top: 50px;
+	height: 50px;
+	color: white;
+	background-color: #334;
+
+}
+
+	.sidebar {
+	width: 580px;
+	height: 90vh;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+	.image-profile {
+	margin-right: 270px;
+	align-items: center;
+}
+
+	.content-2 {
+		display: none;
+	}
+
+	.about-me {
+		justify-content: center;
+		margin-left: 50px;
+		flex-direction: column;
+	}
+
+	.about-me p {
+		border-radius: 10px;
+	}
+
+	.about-me p:nth-child(1)  {
+	width: 70%;
+	margin-top: 80px;
+	margin-left: -500px;
+	padding:15px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+	animation: animasiSlide 2s ease;
+
+}
+
+@keyframes animasiSlide {
+	from {
+
+	margin-left: -500px;
+
+}
+
+	to {
+
+	margin-left: -30px;
+
+	}
+}
+
+	.about-me p:nth-child(2)  {
+	width: 70%;
+	margin-top: 30px;
+	margin-left: 0;
+	margin-left: 70px;
+	padding: 15px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+}
+
+}
+/*AKHIR RESPONSIVE UKURAN HP*/
+
+@media screen and (max-width: 576px){
+	nav {
+		display: flex;
+		width: 100%;
+		justify-content: space-around;
+		grid-area: sidebar;
+		height: 30px;
+		background-color: #333;
+		opacity: 0.95;
+
+	}
+
+	nav .menu-toggle {
+		margin-right: 40px;
+	}
+
+
+	nav .logo {
+		color: white;
+		position: relative;
+		left: -80px;
+		margin-left: 0px;
+	}
+
+		nav ul li {
+		padding: 15px 0px 20px 0px;
+		text-align: center;
+		width: 240px;
+		height:40px;
+		opacity: 0.8;
+	}
+
+	nav ul li a {
+		padding: 50px 60px 30px 60px;
+
+	}
+
+	nav ul li:hover {
+	padding-top: 50px;
+	height: 50px;
+	color: white;
+	background-color: #334;
+
+}
+
+	.sidebar {
+	width: 580px;
+	height: 90vh;
+	background-image: url("assets/townjapan2.jpg");
+	background-size: cover;
+	grid-area: sidebar;
+}
+
+	.image-profile {
+	margin-right: 270px;
+	align-items: center;
+}
+
+	.content-2 {
+		display: none;
+	}
+
+	.about-me {
+		justify-content: center;
+		margin-left: 50px;
+		flex-direction: column;
+	}
+
+	.about-me p {
+		border-radius: 10px;
+	}
+
+	.about-me p:nth-child(1)  {
+	width: 70%;
+	margin-top: 80px;
+	margin-left: -500px;
+	padding:15px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+	animation: animasiSlide 2s ease;
+
+}
+
+@keyframes animasiSlide {
+	from {
+
+	margin-left: -500px;
+
+}
+
+	to {
+
+	margin-left: -30px;
+
+	}
+}
+
+	.about-me p:nth-child(2)  {
+	width: 70%;
+	margin-top: 30px;
+	margin-left: 0;
+	margin-left: 70px;
+	padding: 15px;
+	background:linear-gradient(#3333ff, #6666ff); 
+	color: white;
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
